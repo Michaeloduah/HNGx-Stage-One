@@ -7,14 +7,14 @@ app.use(express.json());
 
 const user = JSON.parse(
     fs.readFileSync(`${__dirname}/data.json`)
-    )
-    
+)
+
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const d = new Date();
 let currentDay = days[d.getDay()];
 console.log(currentDay)
 
-const currentUtcTime = new Date().toUTCString();
+const currentUtcTime = new Date().toISOString();
 console.log(currentUtcTime);
 
 const getUser = (req, res) => {
