@@ -19,13 +19,11 @@ console.log(currentUtcTime);
 
 const getUser = (req, res) => {
     res.status(200).json({
-        status: 'success',
-        results: user.length,
         data: {
-            slack_name : user.slack_name,
+            slack_name : req.query.slack_name,
             current_day : currentDay,
             utc_time : currentUtcTime,
-            track : user.track,
+            track : req.query.track,
             github_file_url : user.github_file_url,
             github_repo_url : user.github_repo_url,
             status_code : user.status_code,
