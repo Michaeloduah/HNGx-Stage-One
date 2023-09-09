@@ -14,21 +14,12 @@ const d = new Date();
 let currentDay = days[d.getDay()];
 console.log(currentDay)
 
-const currentUtcTime = new Date().toISOString();
-console.log(currentUtcTime);
-console.log(`2023-08-21T15:04:05Z`)
 
 const now = new Date();
-const year = now.getFullYear();
-const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-const day = String(now.getDate()).padStart(2, '0');
-const hours = String(now.getHours()).padStart(2, '0');
-const minutes = String(now.getMinutes()).padStart(2, '0');
-const seconds = String(now.getSeconds()).padStart(2, '0');
+const formattedTime = now.toISOString().slice(0, 19) + 'Z';
 
-const formattedTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
-
-console.log(formattedTime);
+console.log(`hn current day 2023-08-21T15:04:05Z`)
+console.log("my current day " + formattedTime);
 
 app.get("/api", (req, res) => {
     res.status(200).json({
