@@ -36,7 +36,7 @@ app.get("/api", (req, res) => {
     res.status(200).json({
         slack_name : req.query.slack_name,
         current_day : currentDay,
-        utc_time : formattedTime = now.toISOString().slice(0, 19) + 'Z',
+        utc_time : formattedTime,
         track : req.query.track,
         github_file_url : user.github_file_url,
         github_repo_url : user.github_repo_url,
