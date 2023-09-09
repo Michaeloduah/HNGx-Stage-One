@@ -15,18 +15,13 @@ let currentDay = days[d.getDay()];
 console.log(currentDay)
 
 const now = new Date();
-const currentMinutes = now.getUTCMinutes();
-const withinTwoMinutes = currentMinutes >= 58 || (currentMinutes >= 0 && currentMinutes <= 2);
+const utcHours = String(now.getUTCHours()).padStart(2, '0');
+const utcMinutes = String(now.getUTCMinutes()).padStart(2, '0');
+const utcSeconds = String(now.getUTCSeconds()).padStart(2, '0');
 
-if (withinTwoMinutes) {
-  console.log('Current UTC time is within the +/-2 minute window.');
-} else {
-  console.log('Current UTC time is outside the +/-2 minute window.');
-}
+const formattedTime = `${utcHours}:${utcMinutes}:${utcSeconds}`;
 
-const formattedTime = now.toISOString().slice(0, 19) + 'Z';
-
-console.log('Current UTC time:', formattedTime);
+console.log('Current UTC time (24-hour format):', formattedTime);
 
 
 
