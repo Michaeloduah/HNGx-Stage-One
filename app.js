@@ -31,7 +31,7 @@ const getUser = (req, res) => {
     })
 }
 
-app.get('/api/v1/user', getUser);
+app.get('/api', getUser);
 const port = 3000;
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`)
