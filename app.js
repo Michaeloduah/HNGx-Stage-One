@@ -23,7 +23,7 @@ const currentDayName = dayNames[currentDayIndex];
 
 const current = new Date();
 const year = current.getUTCFullYear();
-const month = String(current.getUTCMonth() + 1).padStart(2, "0"); // Add 1 to month because it's 0-indexed
+const month = String(current.getUTCMonth() + 1).padStart(2, "0");
 const day = String(current.getUTCDate()).padStart(2, "0");
 const hours = String(current.getUTCHours()).padStart(2, "0");
 const minutes = String(current.getUTCMinutes()).padStart(2, "0");
