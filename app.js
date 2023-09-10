@@ -31,7 +31,6 @@ const seconds = String(current.getUTCSeconds()).padStart(2, "0");
 
 const currentUtcTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
 
-
 app.get("/api", (req, res) => {
   res.status(200).json({
     slack_name: req.query.slack_name,
